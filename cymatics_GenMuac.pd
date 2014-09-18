@@ -1,4 +1,4 @@
-#N canvas -4 23 1279 752 10;
+#N canvas -11 22 1279 752 10;
 #X declare -lib mrpeach;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array fm-output 441 float 4;
@@ -16,7 +16,7 @@
 #X obj -175 189 output~;
 #X obj -16 192 s bang;
 #X obj -94 167 r bang;
-#X obj -171 -198 hsl 350 70 0 200 0 0 empty empty Cymatics_gen 25 35
+#X obj -172 -198 hsl 350 70 0 200 0 0 empty empty Cymatics_gen 25 35
 1 20 -1 -1 -262144 0 1;
 #X obj -100 -54 import mrpeach;
 #X obj -173 -74 route /groupclient/ping;
@@ -26,55 +26,107 @@
 #X obj -172 -113 udpreceive 22244;
 #X obj -173 -34 routeOSC /EEGcinthia/F7 /EEGcinthia/FC5 /EEGcinthia/F3
 /EEGcinthia/AF3 /EEGcinthia/gyroY /EEGcinthia/gyroX;
-#X obj 121 -1 gemhead;
-#X obj 121 17 pix_video;
-#X obj 121 75 pix_texture;
-#X obj 121 57 pix_blob 4;
-#X msg 98 193 destroy;
-#X msg 98 211 reset;
-#X obj 98 229 gemwin;
-#X obj 96 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 38 23 gemhead;
+#X obj 38 41 pix_video;
+#X obj 38 99 pix_texture;
+#X obj 38 81 pix_blob 4;
+#X msg 114 60 destroy;
+#X msg 114 78 reset;
+#X obj 114 96 gemwin;
+#X obj 113 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 97 174 create;
-#X msg 11 230 dimen 640 480;
-#X obj 121 94 square 5;
+#X msg 113 41 create;
+#X obj 38 118 square 5;
 #X obj 30 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 30 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 30 172 metro 100;
-#X msg -51 129 40;
-#X msg -19 129 45;
-#X msg 14 129 50;
-#X obj -168 16 hsl 128 70 0 127 0 0 empty empty Brain_Waves 10 29 1
-15 -1 -1 -262144 11700 1;
-#X msg -172 129 20;
-#X msg -142 129 25;
-#X msg -112 129 30;
-#X msg -81 129 35;
-#X msg 79 128 60;
-#X msg 46 128 55;
-#X msg 111 127 65;
-#X msg 142 127 70;
-#X obj 102 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -4032
+#X msg -114 117 40;
+#X msg -95 117 45;
+#X msg -76 117 50;
+#X obj 183 -198 hsl 128 70 0 127 0 0 empty empty Brain_Waves 10 29
+1 15 -1 -1 -262144 0 1;
+#X msg -177 117 20;
+#X msg -160 117 25;
+#X msg -145 117 30;
+#X msg -128 117 35;
+#X msg -33 117 60;
+#X msg -59 117 55;
+#X msg -11 117 65;
+#X msg 9 117 70;
+#X obj 180 -122 bng 133 250 50 0 empty del empty 17 7 0 10 -1 -262144
 -1;
-#X obj -172 114 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17;
-#X obj 102 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -4032
--1;
-#X obj 102 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -4032
--1;
-#X obj 102 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -4032
--1;
-#X obj 121 38 pix_rgba;
+#X obj 38 62 pix_rgba;
 #X obj 30 212 random 300;
-#X obj -29 17 hsl 128 15 0 127 0 0 empty empty Delta_(O.5_to_4Hz) 2
+#X obj 183 11 hsl 128 15 0 127 0 0 empty empty Delta_(O.5_to_4Hz) 2
 7 0 10 -1 -1 -262144 0 1;
-#X obj -29 35 hsl 128 15 0 127 0 0 empty empty Theta_(4_to_8Hz) 2 7
-0 10 -1 -1 -262144 0 1;
-#X obj -29 53 hsl 128 15 0 127 0 0 empty empty Alpha_(8_to_12Hz) 2
+#X obj 183 165 hsl 128 15 0 127 0 0 empty empty Theta_(4_to_8Hz) 2
 7 0 10 -1 -1 -262144 0 1;
-#X obj -29 71 hsl 128 15 0 127 0 0 empty empty Beta_(13_to_30Hz) 2
+#X obj 183 319 hsl 128 15 0 127 0 0 empty empty Alpha_(8_to_12Hz) 2
 7 0 10 -1 -1 -262144 0 1;
+#X obj 183 475 hsl 128 15 0 127 0 0 empty empty Beta_(13_to_30Hz) 2
+7 0 10 -1 -1 -262144 0 1;
+#N canvas 491 374 450 300 route 0;
+#X obj -76 110 route 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17;
+#X obj -106 160 outlet;
+#X obj -107 186 outlet;
+#X obj -104 213 outlet;
+#X obj -53 159 outlet;
+#X obj -52 186 outlet;
+#X obj -51 212 outlet;
+#X obj 4 158 outlet;
+#X obj 5 185 outlet;
+#X obj 6 211 outlet;
+#X obj 60 152 outlet;
+#X obj 61 179 outlet;
+#X obj 62 205 outlet;
+#X obj 114 150 outlet;
+#X obj 115 177 outlet;
+#X obj 116 203 outlet;
+#X obj -29 63 inlet;
+#X obj 37 54 s del;
+#X obj 86 54 s the;
+#X obj 131 54 s alp;
+#X obj 176 55 s bet;
+#X connect 0 0 1 0;
+#X connect 0 0 17 0;
+#X connect 0 1 2 0;
+#X connect 0 1 17 0;
+#X connect 0 2 3 0;
+#X connect 0 2 17 0;
+#X connect 0 3 4 0;
+#X connect 0 3 17 0;
+#X connect 0 4 5 0;
+#X connect 0 4 18 0;
+#X connect 0 5 6 0;
+#X connect 0 5 18 0;
+#X connect 0 6 7 0;
+#X connect 0 6 18 0;
+#X connect 0 7 8 0;
+#X connect 0 7 18 0;
+#X connect 0 8 9 0;
+#X connect 0 8 19 0;
+#X connect 0 9 10 0;
+#X connect 0 9 19 0;
+#X connect 0 10 11 0;
+#X connect 0 10 19 0;
+#X connect 0 11 12 0;
+#X connect 0 11 20 0;
+#X connect 0 12 13 0;
+#X connect 0 12 20 0;
+#X connect 0 13 14 0;
+#X connect 0 13 20 0;
+#X connect 0 14 15 0;
+#X connect 16 0 0 0;
+#X restore -173 7 pd route;
+#X obj 180 32 bng 133 250 50 0 empty the empty 17 7 0 10 -1 -262144
+-1;
+#X obj 180 185 bng 133 250 50 0 empty alp empty 17 7 0 10 -1 -262144
+-1;
+#X obj 180 341 bng 133 250 50 0 empty bet empty 17 7 0 10 -1 -262144
+-1;
+#X msg 94 118 dimen 720 640;
 #X connect 1 0 2 0;
 #X connect 3 0 2 0;
 #X connect 3 0 8 0;
@@ -88,22 +140,21 @@
 #X connect 15 0 16 0;
 #X connect 15 0 18 0;
 #X connect 17 0 15 0;
-#X connect 18 0 46 0;
 #X connect 19 0 20 0;
-#X connect 20 0 50 0;
-#X connect 21 0 29 0;
+#X connect 20 0 45 0;
+#X connect 21 0 28 0;
 #X connect 22 0 21 0;
 #X connect 23 0 25 0;
 #X connect 24 0 25 0;
 #X connect 26 0 25 0;
 #X connect 27 0 25 0;
-#X connect 28 0 25 0;
-#X connect 30 0 32 0;
-#X connect 31 0 51 0;
-#X connect 32 0 31 0;
+#X connect 29 0 31 0;
+#X connect 30 0 46 0;
+#X connect 31 0 30 0;
+#X connect 32 0 3 0;
 #X connect 33 0 3 0;
 #X connect 34 0 3 0;
-#X connect 35 0 3 0;
+#X connect 36 0 3 0;
 #X connect 37 0 3 0;
 #X connect 38 0 3 0;
 #X connect 39 0 3 0;
@@ -111,31 +162,17 @@
 #X connect 41 0 3 0;
 #X connect 42 0 3 0;
 #X connect 43 0 3 0;
-#X connect 44 0 3 0;
-#X connect 46 0 37 0;
-#X connect 46 0 45 0;
-#X connect 46 1 38 0;
-#X connect 46 1 45 0;
-#X connect 46 2 39 0;
-#X connect 46 2 45 0;
-#X connect 46 3 40 0;
-#X connect 46 3 47 0;
-#X connect 46 4 33 0;
-#X connect 46 4 47 0;
-#X connect 46 5 34 0;
-#X connect 46 5 47 0;
-#X connect 46 6 35 0;
-#X connect 46 6 47 0;
-#X connect 46 7 42 0;
-#X connect 46 7 48 0;
-#X connect 46 8 41 0;
-#X connect 46 8 48 0;
-#X connect 46 9 43 0;
-#X connect 46 9 48 0;
-#X connect 46 10 44 0;
-#X connect 46 10 49 0;
-#X connect 46 11 49 0;
-#X connect 46 12 49 0;
-#X connect 46 13 49 0;
-#X connect 50 0 22 0;
-#X connect 51 0 46 0;
+#X connect 45 0 22 0;
+#X connect 46 0 51 0;
+#X connect 51 0 36 0;
+#X connect 51 1 37 0;
+#X connect 51 2 38 0;
+#X connect 51 3 39 0;
+#X connect 51 4 32 0;
+#X connect 51 5 33 0;
+#X connect 51 6 34 0;
+#X connect 51 7 41 0;
+#X connect 51 8 40 0;
+#X connect 51 9 42 0;
+#X connect 51 11 43 0;
+#X connect 55 0 25 0;
